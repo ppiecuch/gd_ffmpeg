@@ -21,6 +21,7 @@ if env["platform"] == "windows":
 elif env["platform"] == "x11" or env["platform"] == "frt":
     env_module.Append(CPPPATH=["lib/linux/%s/include" % arch])
     env.Append(LIBPATH=[os.path.realpath(os.curdir) + "/lib/linux/%s/lib" % arch])
+    env.Append(LIBS=["iconv"])
 elif env["platform"] == "android":
     env_module.Append(CPPPATH=["lib/android/%s/include" % arch])
     env.Append(LIBPATH=[os.path.realpath(os.curdir) + "/lib/android/%s/lib" % arch])
